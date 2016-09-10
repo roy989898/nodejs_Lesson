@@ -44,11 +44,18 @@ function auth (req, res, next) {
 app.use(auth);
 
 app.use(express.static(__dirname + '/public'));
+
+
+//after call next,will come to here
 app.use(function(err,req,res,next) {
+
+    //if err.status has seat,use it,otherwise 500
+    //500 is internal server error
     res.writeHead(err.status || 500, {
         'WWW-Authenticate': 'Basic',
         'Content-Type': 'text/plain'
     });
+    // var err = new Error('You are not authenticated!');,show You are not authenticated!
     res.end(err.message);
 });
 
