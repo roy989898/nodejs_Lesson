@@ -5,6 +5,8 @@
     "express": "latest",
     "morgan": "latest",
     "body-parser": "latest",
-    "cookie-parser": "latest"
+    "cookie-parser": "latest",
+    "express-session": "latest",
+    "session-file-store": "latest"
   }
 }
